@@ -7,3 +7,4 @@
  -{% include_relative vendor/uswds.min.js %}
 
  // Add your JS sripts here
+  -{% include_relative foo.js %}
