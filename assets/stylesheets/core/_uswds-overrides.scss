@@ -1,0 +1,28 @@
+// Error validations that break US Web Design Standards
+// Maybe keep these selectors in
+.usa-form-large div + label,
+.usa-form-large div + .usa-input-error {
+  clear: both;
+}
+
+.usa-input-grid-small,
+.usa-input-grid-medium {
+
+  .usa-input-error {
+    margin-top: 2.1rem;
+
+    input,
+    select {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.usa-input-grid-small .usa-input-error {
+  right: .5rem;
+
+  input,
+  select {
+    width: calc(100% + .5rem);
+  }
+}
