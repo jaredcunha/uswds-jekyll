@@ -41,3 +41,70 @@ $ bundle exec jekyll serve
 ```
 
 When the application is running, you can view the site in the browser at http://localhost:4000
+
+## Form Prototyping
+
+When submitting the form, data will be pushed to session storage and pulled back immediate so that based on answers, you can link to different pages or perform other kinds of actions.
+
+To do this, you'll need to have this snippet at the bottom of each page:
+
+```
+<script>
+  $(document).ready(function() {
+    $('form').on('submit', function() {
+      if (!checkValidityIfSupported($('form').get(0))) {
+        return false;
+      }
+      else {
+        updateStoredData();
+        nextPage("next-page.html");
+        return false;
+      }
+    });
+  });
+</script>
+```
+
+When we run `updateStoredData()`, we are taking the `value` entered in any type of input and placing that in the session storage as a key/value pair. The **key** is saved as a variable. So lets you want to drive people named "Bob" to one page and everyone else to another page. You would need to have this input in your form:
+
+```
+<input id="first-name" name="first-name" type="text" >
+```
+
+Then in the `<script>` at the bottom you can do:
+```
+<script>
+  $(document).ready(function() {
+    $('form').on('submit', function() {
+      if (!checkValidityIfSupported($('form').get(0))) {
+        return false;
+      }
+      else {
+        updateStoredData();
+
+        if (first-name == "Bob") {
+          nextPage("bob.html");
+        }
+        else {
+          nextPage("others.html");
+        }
+        return false;
+      }
+    });
+  });
+</script>
+```
+
+### Printing Form Data
+Form data can be printed in either inputs or HTML elements using the `data-print` attribute. The value of that attribute should equal the ID of the corresponding input. So, if we wanted to greet Bob on his page, we would write:
+
+```
+<p>Welcome to your very own page, <span data-print="first-name"></span><p>
+```
+
+If you were persisting data in a form, you can add the `data-print` attribute to an input. The ID doesn't have to match:
+```
+<input id="first-name" name="first-name" type="text" data-print="first-name">
+```
+
+[This is work in progress. See review.html for all currently available printing options. ]
