@@ -13,6 +13,17 @@ $(document).ready(function() {
     }
   });
 
+  // Preload Data from a JSON file
+  preloadData = function(src) {
+    $.getJSON( src, function( data ) {
+      var items = [];
+      $.each( data, function( key, val ) {
+        sessionStorage.setItem(key, val);
+      });
+    });
+    getData();
+  }
+
   // Can get previously stored data to run events
   getData = function() {
     for (i = 0; i < sessionStorage.length; i++) {

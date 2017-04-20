@@ -19,6 +19,15 @@ layout: application
     <div class="usa-width-two-thirds">
       <form class="usa-form-large" action="#">
         <fieldset>
+          <legend>Name</legend>
+          <p>First and last name will come from a JSON file.</p>
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" data-print="first-name" required>
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" data-print="last-name" required>
+        </fieldset>
+        <hr>
+        <fieldset>
         <legend>Mailing address</legend>
         <label for="mailing-address-1">Street address 1</label>
         <input id="mailing-address-1" name="mailing-address-1" type="text" required>
@@ -141,6 +150,9 @@ layout: application
 
 <script>
   $(document).ready(function() {
+
+    preloadData("test.json");
+
     $('form').on('submit', function() {
       if (!checkValidityIfSupported($('form').get(0))) {
         return false;

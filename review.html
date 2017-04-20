@@ -20,6 +20,24 @@ layout: application
   <ul class="usa-accordion-bordered">
     <li>
       <button class="usa-accordion-button"
+        aria-controls="amendment-a-1">
+        First Name 1: <span data-print="first-name"></span>
+      </button>
+      <div id="amendment-a-1" class="usa-accordion-content">
+        <input id="first-name" name="first-name" type="text" data-print="first-name" required>
+      </div>
+    </li>
+    <li>
+      <button class="usa-accordion-button"
+        aria-controls="amendment-a-2">
+        First Name 1: <span data-print="last-name"></span>
+      </button>
+      <div id="amendment-a-2" class="usa-accordion-content">
+        <input id="last-name" name="last-name" type="text" data-print="last-name" required>
+      </div>
+    </li>
+    <li>
+      <button class="usa-accordion-button"
         aria-controls="amendment-b-1">
         Address Line 1: <span data-print="mailing-address-1"></span>
       </button>
