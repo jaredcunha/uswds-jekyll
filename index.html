@@ -120,6 +120,22 @@ layout: application
             <input id="tubman" type="radio" name="historical-figure" value="Harriet Tubman" required>
             <label for="tubman">Harriet Tubman</label>
           </li>
+          <li>
+            <input id="other" type="radio" name="historical-figure" value="Other" data-followup="historical-figure-followup" data-followup-required="true" required>
+            <label for="other">Other</label>
+            <div id="historical-figure-followup" class="usa-extend--hidden" aria-hidden="true">
+                <label for="other-hero">Specify</label>
+                <input type="text" id="other-hero" >
+            </div>
+          </li>
+          <li>
+            <input id="none" type="radio" name="historical-figure" value="None" data-followup="historical-figure-followup2" required>
+            <label for="none">I don't have a hero</label>
+            <div id="historical-figure-followup2" class="usa-extend--hidden" aria-hidden="true">
+                <label for="reason">Why?</label>
+                <input type="text" id="reason" >
+            </div>
+          </li>
         </ul>
       </fieldset>
       <hr>
@@ -135,11 +151,40 @@ layout: application
             <label for="pizza">Pizza</label>
           </li>
           <li>
-            <input id="muffins" type="checkbox" name="food-order" disabled>
+            <input id="muffins" type="checkbox" name="food-order" data-followup="muffin" data-followup-required="true">
             <label for="muffins">Muffins</label>
+            <div id="muffin" class="usa-extend--hidden" aria-hidden="true">
+                <label for="muffin-type">Type</label>
+                <input type="text" id="muffin-type" >
+            </div>
           </li>
         </ul>
 
+      </fieldset>
+      <hr>
+      <fieldset>
+        <legend>Select box</legend>
+        <label for="additional-field">Additional Field?</label>
+        <select name="additional-field" id="additional-field">
+          <option value=""></option>
+          <option value="no">No</option>
+          <option value="yes" data-followup="additional-field-q">Yes</option>
+        </select>
+        <div id="additional-field-q" class="usa-extend--hidden" aria-hidden="true">
+            <label for="g">What is it?</label>
+            <input type="text" id="g" >
+        </div>
+
+        <label for="additional-field2">Additional Field?</label>
+        <select name="additional-field2" id="additional-field2">
+          <option value=""></option>
+          <option value="no">No</option>
+          <option value="yes" data-followup="additional-field-q2">Yes</option>
+        </select>
+        <div id="additional-field-q2" class="usa-extend--hidden" aria-hidden="true">
+            <label for="gh">What is it?</label>
+            <input type="text" id="gh" >
+        </div>
       </fieldset>
       <button type="submit">Submit</button>
       </form>
