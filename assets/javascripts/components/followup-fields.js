@@ -6,27 +6,34 @@
 $(document).ready(function() {
   var hidden_class = "usa-extend--hidden";
 
+  var showFollowup = function(e, required) {
+    console.log(required);
+    e.removeAttr("aria-hidden").removeClass(hidden_class);
+    if (required == "true"){
+      e.find('input, select').attr('required', 'true');
+    }
+  }
+
+  var hideFollowup = function(e, required) {
+    e.attr("aria-hidden", "true").addClass(hidden_class);
+    if (required == "true"){
+      e.find('input, select').removeAttr('required');
+    }
+  }
+
 
   $("input:radio").change(function () {
-
-
-    // Find other radios that match the set
-    // Find if any have a followup trigger
-    // Determine if the follupw is checked or unchecked
-    // Run function for the followup.
-
-
     var name = $(this).attr("name");
     var $el = $('input:radio[name="'+ name +'"]');
 
     $el.each(function(){
-      $(this).addClass('d');
-      var target = $(this).attr('data-followup');
+      var target = $(this).attr('data-followup'),
+          required = $(this).attr('data-followup-required');
       if ($(this).is(":checked")) {
-        $('#' + target).removeAttr("aria-hidden").removeClass(hidden_class);
+        showFollowup($('#' + target), required);
       }
       else {
-        $('#' + target).attr("aria-hidden", "true").addClass(hidden_class);
+        hideFollowup($('#' + target), required);
       }
     });
 
