@@ -1,6 +1,7 @@
 /*
 
   Show and hide followup fields for radio buttons and checkboxes
+  Todo: we need to DRY up the code a little bit.
 */
 
 $(document).ready(function() {
@@ -55,7 +56,7 @@ $(document).ready(function() {
 
   // Handle Selct Boxes
   var previous;
-  $selectbox.on('click focus', function(){
+  $selectbox.on('click focus keydown', function(){
     previous = $(this).find(':selected').attr('data-followup'),
     previous_required = $(this).find(':selected').attr('data-followup-required');
   }).change(function(){
