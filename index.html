@@ -140,28 +140,6 @@ layout: application
       </fieldset>
       <hr>
       <fieldset class="usa-fieldset-inputs usa-sans">
-        <legend>Test</legend>
-        <ul>
-          <li>
-            <input id="foo" type="radio" name="foo" value="Other" data-followup="historical-figure-followup3" data-followup-required="true" required>
-            <label for="foo">Other</label>
-            <div id="historical-figure-followup3" class="usa-extend--hidden" aria-hidden="true">
-                <label for="foo2">Specify</label>
-                <input type="text" id="foo2" >
-            </div>
-          </li>
-          <li>
-            <input id="bar" type="radio" name="foo" value="None" data-followup="historical-figure-followup4" data-followup-required="true" required>
-            <label for="bar">I don't have a hero</label>
-            <div id="historical-figure-followup4" class="usa-extend--hidden" aria-hidden="true">
-                <label for="bar2">Why?</label>
-                <input type="text" id="bar2" >
-            </div>
-          </li>
-        </ul>
-        </fieldset
-      <hr>
-      <fieldset class="usa-fieldset-inputs usa-sans">
         <legend>Food Order</legend>
         <ul class="usa-unstyled-list">
           <li>
@@ -173,8 +151,12 @@ layout: application
             <label for="pizza">Pizza</label>
           </li>
           <li>
-            <input id="muffins" type="checkbox" name="food-order" disabled>
+            <input id="muffins" type="checkbox" name="food-order" data-followup="muffin" data-followup-required="true">
             <label for="muffins">Muffins</label>
+            <div id="muffin" class="usa-extend--hidden" aria-hidden="true">
+                <label for="muffin-type">Type</label>
+                <input type="text" id="muffin-type" >
+            </div>
           </li>
         </ul>
 
