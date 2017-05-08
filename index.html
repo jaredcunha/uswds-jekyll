@@ -120,8 +120,46 @@ layout: application
             <input id="tubman" type="radio" name="historical-figure" value="Harriet Tubman" required>
             <label for="tubman">Harriet Tubman</label>
           </li>
+          <li>
+            <input id="other" type="radio" name="historical-figure" value="Other" data-followup="historical-figure-followup" data-followup-required="true" required>
+            <label for="other">Other</label>
+            <div id="historical-figure-followup" class="usa-extend--hidden" aria-hidden="true">
+                <label for="other-hero">Specify</label>
+                <input type="text" id="other-hero" >
+            </div>
+          </li>
+          <li>
+            <input id="none" type="radio" name="historical-figure" value="None" data-followup="historical-figure-followup2" data-followup-required="true" required>
+            <label for="none">I don't have a hero</label>
+            <div id="historical-figure-followup2" class="usa-extend--hidden" aria-hidden="true">
+                <label for="reason">Why?</label>
+                <input type="text" id="reason" >
+            </div>
+          </li>
         </ul>
       </fieldset>
+      <hr>
+      <fieldset class="usa-fieldset-inputs usa-sans">
+        <legend>Test</legend>
+        <ul>
+          <li>
+            <input id="foo" type="radio" name="foo" value="Other" data-followup="historical-figure-followup3" data-followup-required="true" required>
+            <label for="foo">Other</label>
+            <div id="historical-figure-followup3" class="usa-extend--hidden" aria-hidden="true">
+                <label for="foo2">Specify</label>
+                <input type="text" id="foo2" >
+            </div>
+          </li>
+          <li>
+            <input id="bar" type="radio" name="foo" value="None" data-followup="historical-figure-followup4" data-followup-required="true" required>
+            <label for="bar">I don't have a hero</label>
+            <div id="historical-figure-followup4" class="usa-extend--hidden" aria-hidden="true">
+                <label for="bar2">Why?</label>
+                <input type="text" id="bar2" >
+            </div>
+          </li>
+        </ul>
+        </fieldset
       <hr>
       <fieldset class="usa-fieldset-inputs usa-sans">
         <legend>Food Order</legend>

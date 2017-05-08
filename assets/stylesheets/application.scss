@@ -5,8 +5,9 @@
 // Import THe Web Design Standards
 @import "../uswds/stylesheets/all";
 
-// Demo Delete this line and import statement when you begin
+// Consider including these files in your project. They will compliment the USWDS
 @import "core/uswds-overrides";
+@import "core/utilities";
 
 // Demo Delete this line and import statement when you begin
 @import "demo/demo";
