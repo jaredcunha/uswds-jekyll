@@ -21,7 +21,7 @@ $(document).ready(function() {
   var hideFollowup = function(e, required) {
     e.attr("aria-hidden", "true").addClass(hidden_class);
     if (required == "true"){
-      e.find('input, select').removeAttr('required');
+      e.find('input, select, textarea').removeAttr('required');
     }
   };
 

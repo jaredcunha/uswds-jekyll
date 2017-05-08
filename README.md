@@ -95,6 +95,38 @@ Then in the `<script>` at the bottom you can do:
 </script>
 ```
 
+### Follow-up questions
+In some forms, you may want to ask an inline follow-up if a user selects a specific answer. This is enabled on radios, select boxes, and checkboxes using a mix of `data` attributes and `id` attributes.
+
+On the form element that triggers a follow-up, use the `data-followup` attribute with a value that corresponds to the `id` of element you wish toggle on and off. The follow-up can appear in any part of the DOM and can include any type of content.
+
+To make form elements required in the follow-up, place `data-followup-required="true"` on the element that triggers the follow-up to appear.
+
+```
+<input id="other" type="radio" name="historical-figure" value="Other" data-followup="historical-figure-followup" data-followup-required="true" required>
+<label for="other">Other</label>
+<div id="historical-figure-followup" class="usa-extend--hidden" aria-hidden="true">
+    <label for="other-hero">Specify</label>
+    <input type="text" id="other-hero" >
+</div>
+```
+
+#### Select Boxes
+For Select boxes, put the `data-followup` on the `<option>`.
+
+```
+<label for="additional-field">Additional Field?</label>
+<select name="additional-field" id="additional-field">
+  <option value=""></option>
+  <option value="no">No</option>
+  <option value="yes" data-followup="additional-field-q">Yes</option>
+</select>
+<div id="additional-field-q" class="usa-extend--hidden" aria-hidden="true">
+    <label for="g">What is it?</label>
+    <input type="text" id="g" >
+</div>
+```
+
 ### Printing Form Data
 Form data can be printed in either inputs or HTML elements using the `data-print` attribute. The value of that attribute should equal the ID of the corresponding input. So, if we wanted to greet Bob on his page, we would write:
 
