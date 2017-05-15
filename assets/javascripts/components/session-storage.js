@@ -63,7 +63,7 @@ $(document).ready(function() {
         sessionStorage.setItem(key, value);
         var selections = $("input[type='checkbox']:checked").map(function(){
           return $(this).attr('value');
-        }).get();
+        }).get().join(', ');
         sessionStorage.setItem(set, selections);
     });
   }
