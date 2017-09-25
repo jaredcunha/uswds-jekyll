@@ -17,23 +17,29 @@ layout: application
 
   <p>This prototype mocks form functionality and allows you to recall the data you've entered in both forms and printed text.</p>
 
+  <p data-filter-first_name="Pete">First name is not jared</p>
+  <p data-filter-first_name="Jared Poobear">First name is jared or Poobear</p>
+
+  <p data-filter-last_name="Flaps">Last name is not Cunha</p>
+  <p data-filter-last_name="Cunha Murphy">Last is Cunha or Murphy</p>
+
   <ul class="usa-accordion-bordered">
     <li>
       <button class="usa-accordion-button"
         aria-controls="amendment-a-1">
-        First Name 1: <span data-print="first-name"></span>
+        First Name 1: <span data-print="first_name"></span>
       </button>
       <div id="amendment-a-1" class="usa-accordion-content">
-        <input id="first-name" name="first-name" type="text" data-print="first-name" required>
+        <input id="first_name" name="first_name" type="text" data-print="first_name" required>
       </div>
     </li>
     <li>
       <button class="usa-accordion-button"
         aria-controls="amendment-a-2">
-        First Name 1: <span data-print="last-name"></span>
+        First Name 1: <span data-print="last_name"></span>
       </button>
       <div id="amendment-a-2" class="usa-accordion-content">
-        <input id="last-name" name="last-name" type="text" data-print="last-name" required>
+        <input id="last_name" name="last_name" type="text" data-print="last_name" required>
       </div>
     </li>
     <li>

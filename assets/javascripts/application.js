@@ -10,6 +10,7 @@
  -{% include_relative components/followup-fields.js %}
  -{% include_relative components/form-validation.js %}
  -{% include_relative components/session-storage.js %}
+  -{% include_relative components/filter-content.js %}
   -{% include_relative components/store-url-params.js %}
 
  // Add your JS sripts here
