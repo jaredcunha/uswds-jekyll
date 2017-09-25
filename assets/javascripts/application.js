@@ -14,4 +14,4 @@
   -{% include_relative components/store-url-params.js %}
 
  // Add your JS sripts here
-  -{% include_relative foo.js %}
+  -{% include_relative init.js %}

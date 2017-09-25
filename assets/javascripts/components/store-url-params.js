@@ -5,7 +5,7 @@
 */
 
 $(document).ready(function() {
-function storeUrlParams() {
+storeUrlParams = function () {
   var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
   for(var i = 0; i < hashes.length; i++)
   {
@@ -13,7 +13,5 @@ function storeUrlParams() {
     sessionStorage.setItem(hash[0], decodeURI(hash[1]));
   }
 }
-
-storeUrlParams();
 
 });
