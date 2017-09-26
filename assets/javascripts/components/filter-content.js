@@ -11,11 +11,10 @@
 
 $(document).ready(function() {
   runPageFilters = function(){
-    filterContent = function(key,selected_filter) {
-      $('*['+ key +']').each(function(){
-        filter_list = $.makeArray($('*['+ key +']').attr(key).split(" "));
-        console.log(selected_filter);
-        if (filter_list.indexOf(eval(selected_filter)) >= 0)  {
+    filterContent = function(target_attribute, filter_key) {
+      $('*['+ target_attribute +']').each(function(){
+        accepted_values = $.makeArray($('*['+ target_attribute +']').attr(target_attribute).split(" "));
+        if (accepted_values.indexOf(eval(filter_key)) >= 0)  {
           /* Do Nothing */
         }
         else {
@@ -48,23 +47,23 @@ $(document).ready(function() {
       var e = $(this).prop('outerHTML')
       var start_pos = e.indexOf("data-filter-") + 12;
       var end_pos = e.indexOf('=',start_pos);
-      var filter_name = e.substring(start_pos,end_pos);
+      var filter_key = e.substring(start_pos,end_pos);
 
-      var data_attribute = "data-filter-" + filter_name;
-      var data_attribute_value = $(this).attr("data-filter-" + filter_name);
+      var data_attribute = "data-filter-" + filter_key;
+      var data_attribute_value = $(this).attr("data-filter-" + filter_key);
 
       all_data_filters.push(data_attribute);
     });
 
     var unique_data_filters = [];
-    $.each(all_data_filters, function(i, el){
-        if($.inArray(el, unique_data_filters) === -1) unique_data_filters.push(el);
+    $.each(all_data_filters, function(i, target_attribute){
+        if($.inArray(target_attribute, unique_data_filters) === -1) unique_data_filters.push(target_attribute);
     });
 
 
-    $.each(unique_data_filters, function(i, el) {
-      var filter_name = el.replace('data-filter-','');
-      filterContent(el, filter_name);
+    $.each(unique_data_filters, function(i, target_attribute) {
+      var filter_key = target_attribute.replace('data-filter-','');
+      filterContent(target_attribute, filter_key);
     });
 
   }
