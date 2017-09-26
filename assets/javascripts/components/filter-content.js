@@ -13,7 +13,7 @@ $(document).ready(function() {
   runPageFilters = function(){
     filterContent = function(target_attribute, filter_key) {
       $('*['+ target_attribute +']').each(function(){
-        accepted_values = $.makeArray($('*['+ target_attribute +']').attr(target_attribute).split(" "));
+        accepted_values = $.makeArray($(this).attr(target_attribute).split(" "));
         if (accepted_values.indexOf(eval(filter_key)) >= 0)  {
           /* Do Nothing */
         }
@@ -57,16 +57,12 @@ $(document).ready(function() {
 
     var unique_data_filters = [];
     $.each(all_data_filters, function(i, target_attribute){
-        if($.inArray(target_attribute, unique_data_filters) === -1) unique_data_filters.push(target_attribute);
+        if($.inArray(target_attribute, unique_data_filters) === -1)  unique_data_filters.push(target_attribute);
     });
-
 
     $.each(unique_data_filters, function(i, target_attribute) {
       var filter_key = target_attribute.replace('data-filter-','');
       filterContent(target_attribute, filter_key);
     });
-
   }
-
-
 });
