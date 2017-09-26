@@ -51,6 +51,11 @@ $(document).ready(function() {
         var key = $(this).attr('name');
         sessionStorage.setItem(key, value);
     });
+    $("input[type='file']").each(function(){
+        var value = $(this).val().replace(/^.*[\\\/]/, '');
+        var key = $(this).attr('id');
+        sessionStorage.setItem(key, value);
+    });
     $("input[type='checkbox']").each(function(){
         var value = "no";
         var key = $(this).attr('id');
