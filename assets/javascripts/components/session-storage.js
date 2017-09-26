@@ -40,7 +40,7 @@ $(document).ready(function() {
 
   //Save Data
   storeData = function() {
-    $('input[type="tel"], input[type="number"], input[type="text"], input[type="email"], input[type="password"], select').each(function(){
+    $('input[type="tel"], input[type="number"], input[type="text"], input[type="email"], input[type="password"], input[type="hidden"], select, textarea').each(function(){
         var value = $(this).val();
         var key = $(this).attr('id');
         sessionStorage.setItem(key, value);
