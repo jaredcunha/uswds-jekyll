@@ -153,7 +153,7 @@ If filtering content, **use underscores as separators, note hyphens**
 
 <div data-filter-foo="bar">     // Element stays on page
 <div data-filter-foo="baz">     // Element is removed
-<div data-filter-foo="bar bar"> // Element stays on page
+<div data-filter-foo="bar baz"> // Element stays on page
 ```
 
 This system works well with the URL parameters above.
