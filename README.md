@@ -104,7 +104,7 @@ To make form elements required in the follow-up, place `data-followup-required="
 ```
 <input id="other" type="radio" name="historical-figure" value="Other" data-followup="historical-figure-followup" data-followup-required="true" required>
 <label for="other">Other</label>
-<div id="historical-figure-followup" class="usa-extend--hidden" aria-hidden="true">
+<div id="historical-figure-followup" hidden aria-hidden="true">
     <label for="other-hero">Specify</label>
     <input type="text" id="other-hero" >
 </div>
@@ -114,13 +114,13 @@ To make form elements required in the follow-up, place `data-followup-required="
 For Select boxes, put the `data-followup` on the `<option>`.
 
 ```
-<label for="additional-field">Additional Field?</label>
-<select name="additional-field" id="additional-field">
+<label for="additional_field">Additional Field?</label>
+<select name="additional_field" id="additional_field">
   <option value=""></option>
   <option value="no">No</option>
-  <option value="yes" data-followup="additional-field-q">Yes</option>
+  <option value="yes" data-followup="additional_field_q">Yes</option>
 </select>
-<div id="additional-field-q" class="usa-extend--hidden" aria-hidden="true">
+<div id="additional_field_q" hidden aria-hidden="true">
     <label for="g">What is it?</label>
     <input type="text" id="g" >
 </div>

@@ -17,8 +17,8 @@ layout: application
 
   <p>This prototype mocks form functionality and allows you to recall the data you've entered in both forms and printed text.</p>
 
-  <p data-filter-first_name="Pete">First name is not jared</p>
-  <p data-filter-first_name="Jared Poobear">First name is jared or Poobear</p>
+  <p data-filter-first_name="Pete">First name is not Jared</p>
+  <p data-filter-first_name="Jared Poobear">First name is Jared or Poobear</p>
 
   <p data-filter-last_name="Flaps">Last name is not Cunha</p>
   <p data-filter-last_name="Cunha Murphy">Last is Cunha or Murphy</p>
@@ -45,19 +45,19 @@ layout: application
     <li>
       <button class="usa-accordion-button"
         aria-controls="amendment-b-1">
-        Address Line 1: <span data-print="mailing-address-1"></span>
+        Address Line 1: <span data-print="mailing_address_1"></span>
       </button>
       <div id="amendment-b-1" class="usa-accordion-content">
-        <input id="mailing-address-1" name="mailing-address-1" type="text" data-print="mailing-address-1" required>
+        <input id="mailing_address_1" name="mailing_address_1" type="text" data-print="mailing_address_1" required>
       </div>
     </li>
     <li>
       <button class="usa-accordion-button"
         aria-controls="amendment-b-2">
-        Address Line 2: <span data-print="mailing-address-2"></span>
+        Address Line 2: <span data-print="mailing_address_2"></span>
       </button>
       <div id="amendment-b-2" class="usa-accordion-content">
-        <input id="mailing-address-2" name="mailing-address-2" type="text" data-print="mailing-address-2" required>
+        <input id="mailing_address_2" name="mailing_address_2" type="text" data-print="mailing_address_2" required>
       </div>
     </li>
     <li>
@@ -145,20 +145,20 @@ layout: application
     <li>
       <button class="usa-accordion-button"
         aria-controls="amendment-b-6">
-        Hero: <span data-print="historical-figure"></span>
+        Hero: <span data-print="historical_figure"></span>
       </button>
       <div id="amendment-b-6" class="usa-accordion-content">
         <ul class="usa-unstyled-list">
           <li>
-            <input id="stanton" type="radio" name="historical-figure" value="Elizabeth Cady Stanton" data-print="historical-figure" required>
+            <input id="stanton" type="radio" name="historical_figure" value="Elizabeth Cady Stanton" data-print="historical_figure" required>
             <label for="stanton">Elizabeth Cady Stanton</label>
           </li>
           <li>
-            <input id="anthony" type="radio" name="historical-figure" value="Susan B. Anthony" data-print="historical-figure" required="">
+            <input id="anthony" type="radio" name="historical_figure" value="Susan B. Anthony" data-print="historical_figure" required="">
             <label for="anthony">Susan B. Anthony</label>
           </li>
           <li>
-            <input id="tubman" type="radio" name="historical-figure" value="Harriet Tubman" data-print="historical-figure" required>
+            <input id="tubman" type="radio" name="historical_figure" value="Harriet Tubman" data-print="historical_figure" required>
             <label for="tubman">Harriet Tubman</label>
           </li>
         </ul>
@@ -167,7 +167,7 @@ layout: application
     <li>
       <button class="usa-accordion-button"
         aria-controls="amendment-b-7">
-        Foods: <span data-print="food-order"></span>
+        Foods: <span data-print="food_order"></span>
       </button>
       <div id="amendment-b-7" class="usa-accordion-content">
         <p>Burgers? <span data-print="burgers"></span></p>
@@ -175,15 +175,15 @@ layout: application
         <p>Muffins? <span data-print="muffins"></span></p>
         <ul class="usa-unstyled-list">
           <li>
-            <input id="burgers" type="checkbox" name="food-order" value="Burgers" data-print="burgers">
+            <input id="burgers" type="checkbox" name="food_order" value="Burgers" data-print="burgers">
             <label for="burders">Burgers</label>
           </li>
           <li>
-            <input id="pizza" type="checkbox" name="food-order" value="Pizza" data-print="pizza" required>
+            <input id="pizza" type="checkbox" name="food_order" value="Pizza" data-print="pizza" required>
             <label for="pizza">Pizza</label>
           </li>
           <li>
-            <input id="muffins" type="checkbox" name="food-order" data-print="muffins" disabled>
+            <input id="muffins" type="checkbox" name="food_order" data-print="muffins" disabled>
             <label for="muffins">Muffins</label>
           </li>
         </ul>

@@ -37,11 +37,11 @@ layout: application
         <hr>
         <fieldset>
         <legend>Mailing address</legend>
-        <label for="mailing-address-1">Street address 1</label>
-        <input id="mailing-address-1" name="mailing-address-1" type="text" required>
+        <label for="mailing_address_1">Street address 1</label>
+        <input id="mailing_address_1" name="mailing_address_1" type="text" required>
 
-        <label for="mailing-address-2">Street address 2 <span class="usa-additional_text">(Optional)</span></label>
-        <input id="mailing-address-2" name="mailing-address-2" type="text">
+        <label for="mailing_address_2">Street address 2 <span class="usa-additional_text">(Optional)</span></label>
+        <input id="mailing_address_2" name="mailing_address_2" type="text">
 
         <div>
           <div class="usa-input-grid usa-input-grid-medium">
@@ -117,29 +117,29 @@ layout: application
         <legend>Favorite Hero</legend><br>
         <ul class="usa-unstyled-list">
           <li>
-            <input id="stanton" type="radio" name="historical-figure" value="Elizabeth Cady Stanton" required>
+            <input id="stanton" type="radio" name="historical_figure" value="Elizabeth Cady Stanton" required>
             <label for="stanton">Elizabeth Cady Stanton</label>
           </li>
           <li>
-            <input id="anthony" type="radio" name="historical-figure" value="Susan B. Anthony" required="">
+            <input id="anthony" type="radio" name="historical_figure" value="Susan B. Anthony" required="">
             <label for="anthony">Susan B. Anthony</label>
           </li>
           <li>
-            <input id="tubman" type="radio" name="historical-figure" value="Harriet Tubman" required>
+            <input id="tubman" type="radio" name="historical_figure" value="Harriet Tubman" required>
             <label for="tubman">Harriet Tubman</label>
           </li>
           <li>
-            <input id="other" type="radio" name="historical-figure" value="Other" data-followup="historical-figure-followup" data-followup-required="true" required>
+            <input id="other" type="radio" name="historical_figure" value="Other" data-followup="historical_figure-followup" data-followup-required="true" required>
             <label for="other">Other</label>
-            <div id="historical-figure-followup" class="usa-form-followup" hidden aria-hidden="true">
+            <div id="historical_figure-followup" class="usa-form-followup" hidden aria-hidden="true">
                 <label for="other-hero">Specify</label>
                 <input type="text" id="other-hero" >
             </div>
           </li>
           <li>
-            <input id="none" type="radio" name="historical-figure" value="None" data-followup="historical-figure-followup2" required>
+            <input id="none" type="radio" name="historical_figure" value="None" data-followup="historical_figure-followup2" required>
             <label for="none">I don't have a hero</label>
-            <div id="historical-figure-followup2" class="usa-form-followup" hidden aria-hidden="true">
+            <div id="historical_figure-followup2" class="usa-form-followup" hidden aria-hidden="true">
                 <label for="reason">Why?</label>
                 <input type="text" id="reason" >
             </div>
@@ -151,15 +151,15 @@ layout: application
         <legend>Food Order</legend><br>
         <ul class="usa-unstyled-list">
           <li>
-            <input id="burgers" type="checkbox" name="food-order" value="Burgers">
+            <input id="burgers" type="checkbox" name="food_order" value="Burgers">
             <label for="burders">Burgers</label>
           </li>
           <li>
-            <input id="pizza" type="checkbox" name="food-order" value="Pizza" required>
+            <input id="pizza" type="checkbox" name="food_order" value="Pizza" required>
             <label for="pizza">Pizza</label>
           </li>
           <li>
-            <input id="muffins" type="checkbox" name="food-order" data-followup="muffin" data-followup-required="true" value="Muffins">
+            <input id="muffins" type="checkbox" name="food_order" data-followup="muffin" data-followup-required="true" value="Muffins">
             <label for="muffins">Muffins</label>
             <div id="muffin" class="usa-form-followup" hidden aria-hidden="true">
                 <label for="muffin-type">Type</label>
@@ -172,24 +172,24 @@ layout: application
       <hr>
       <fieldset>
         <legend>Select box</legend>
-        <label for="additional-field">Additional Field?</label>
-        <select name="additional-field" id="additional-field">
+        <label for="additional_field">Additional Field?</label>
+        <select name="additional_field" id="additional_field">
           <option value=""></option>
           <option value="no">No</option>
-          <option value="yes" data-followup="additional-field-q">Yes</option>
+          <option value="yes" data-followup="additional_field_q">Yes</option>
         </select>
-        <div id="additional-field-q" class="usa-form-followup" hidden aria-hidden="true">
+        <div id="additional_field_q" class="usa-form-followup" hidden aria-hidden="true">
             <label for="g">What is it?</label>
             <input type="text" id="g" >
         </div>
 
-        <label for="additional-field2">Additional Field?</label>
-        <select name="additional-field2" id="additional-field2">
+        <label for="additional_field2">Additional Field?</label>
+        <select name="additional_field2" id="additional_field2">
           <option value=""></option>
           <option value="no">No</option>
-          <option value="yes" data-followup="additional-field-q2">Yes</option>
+          <option value="yes" data-followup="additional_field_q2">Yes</option>
         </select>
-        <div id="additional-field-q2" class="usa-form-followup" hidden aria-hidden="true">
+        <div id="additional_field_q2" class="usa-form-followup" hidden aria-hidden="true">
             <label for="gh">What is it?</label>
             <input type="text" id="gh" >
         </div>
