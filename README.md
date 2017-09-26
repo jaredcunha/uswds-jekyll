@@ -56,7 +56,6 @@ To do this, you'll need to have this snippet at the bottom of each page:
         return false;
       }
       else {
-        updateStoredData();
         nextPage("next-page.html");
         return false;
       }
