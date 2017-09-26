@@ -67,7 +67,7 @@ To do this, you'll need to have this snippet at the bottom of each page:
 When we run `updateStoredData()`, we are taking the `value` entered in any type of input and placing that in the session storage as a key/value pair. The **key** is saved as a variable. So lets you want to drive people named "Bob" to one page and everyone else to another page. You would need to have this input in your form:
 
 ```
-<input id="first-name" name="first-name" type="text" >
+<input id="first_name" name="first_name" type="text" >
 ```
 
 Then in the `<script>` at the bottom you can do:
@@ -81,7 +81,7 @@ Then in the `<script>` at the bottom you can do:
       else {
         updateStoredData();
 
-        if (first-name == "Bob") {
+        if (first_name == "Bob") {
           nextPage("bob.html");
         }
         else {
@@ -102,7 +102,7 @@ On the form element that triggers a follow-up, use the `data-followup` attribute
 To make form elements required in the follow-up, place `data-followup-required="true"` on the element that triggers the follow-up to appear.
 
 ```
-<input id="other" type="radio" name="historical-figure" value="Other" data-followup="historical-figure-followup" data-followup-required="true" required>
+<input id="other" type="radio" name="historical_figure" value="Other" data-followup="historical-figure-followup" data-followup-required="true" required>
 <label for="other">Other</label>
 <div id="historical-figure-followup" hidden aria-hidden="true">
     <label for="other-hero">Specify</label>
@@ -130,12 +130,30 @@ For Select boxes, put the `data-followup` on the `<option>`.
 Form data can be printed in either inputs or HTML elements using the `data-print` attribute. The value of that attribute should equal the ID of the corresponding input. So, if we wanted to greet Bob on his page, we would write:
 
 ```
-<p>Welcome to your very own page, <span data-print="first-name"></span><p>
+<p>Welcome to your very own page, <span data-print="first_name"></span><p>
 ```
 
 If you were persisting data in a form, you can add the `data-print` attribute to an input. The ID doesn't have to match:
 ```
-<input id="first-name" name="first-name" type="text" data-print="first-name">
+<input id="first_name" name="first_name" type="text" data-print="first_name">
 ```
 
 [This is work in progress. See review.html for all currently available printing options. ]
+
+### URL Parameters
+Any page loaded with a URL parameter or parameters will be stored as key/value pairs in `sessionStorage`. For example, when you visit a page as `http://site.com?foo=bar`, your sessionStorage will be updated with `foo: "bar"` to use later.
+
+### Filtering Content on the page
+Filtering content will allow you to handle multiple states on a single page. For example, let's say you have a page that would show some content that is conditional upon some stored data. You can use the data attribute `data-filter-[STORED_ID]="[STORED_ID_VALUE]"` to keep it on the page. If the `STORED_ID_VALUE` attribute does not match what is in your session data, the element will be removed from the DOM.
+
+If filtering content, **use underscores as separators, note hyphens**
+
+```
+// Session Data { foo: "bar" }
+
+<div data-filter-foo="bar">     // Element stays on page
+<div data-filter-foo="baz">     // Element is removed
+<div data-filter-foo="bar bar"> // Element stays on page
+```
+
+This system works well with the URL parameters above.
