@@ -5,21 +5,22 @@
 */
 
 $(document).ready(function() {
-  var hidden_class = "usa-extend--hidden";
-      $radio = $("input:radio");
+  var hidden_class = "usa-extend--hidden",
+      aria_hidden_attr = "aria-hidden",
+      $radio = $("input:radio"),
       $checkbox = $('input:checkbox[data-followup]'),
       $selectbox = $('select');
 
   var showFollowup = function(e, required) {
     console.log(required);
-    e.removeAttr("aria-hidden").removeClass(hidden_class);
+    e.removeAttr("aria-hidden, hidden");
     if (required == "true"){
       e.find('input, select').attr('required', 'true');
     }
   }
 
   var hideFollowup = function(e, required) {
-    e.attr("aria-hidden", "true").addClass(hidden_class);
+    e.attr({ aria_hidden_attr: "true", hidden: ''});
     if (required == "true"){
       e.find('input, select, textarea').removeAttr('required');
     }
