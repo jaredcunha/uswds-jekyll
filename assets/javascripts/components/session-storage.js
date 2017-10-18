@@ -101,14 +101,21 @@ $(document).ready(function() {
           }
         }
         else {
-          $(this).attr('data-print', placeholder_key).val(printed_text);
+          if (printed_text != "[object HTMLInputElement]") {
+            $(this).attr('data-print', placeholder_key).val(printed_text);
+          }
+
         }
       }
       else if ($(element_type).is('select')) {
-        $(this).find('option[value='+ printed_text +']').prop('selected', true);
+        if ((printed_text != "[object HTMLInputElement]") && (printed_text != "[object HTMLSelectElement]")) {
+          $(this).find('option[value='+ printed_text +']').prop('selected', true);
+        }
       }
       else {
-        $(this).attr('data-print', placeholder_key).text(printed_text);
+        if ((printed_text != "[object HTMLInputElement]") && (printed_text != "[object HTMLSelectElement]")) {
+          $(this).attr('data-print', placeholder_key).text(printed_text);
+        }
       }
     });
 
