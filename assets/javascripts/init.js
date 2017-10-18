@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-  updateStoredData();
+  getData();
   storeUrlParams();
   printData();
-  updateStoredData();
+  getData();
   runPageFilters();
 
 });
