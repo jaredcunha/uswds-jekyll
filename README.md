@@ -1,6 +1,6 @@
 # USWDS + Jekyll
 
-This is a boilerplate for using **Version 1.0** of the [U.S. Web Design Standards](https://standards.usa.gov/) to build static websites and prototypes with [Jekyll](https://jekyllrb.com/).
+This is a boilerplate for using **Version 1.4.1** of the [U.S. Web Design Standards](https://standards.usa.gov/) to build static websites and prototypes with [Jekyll](https://jekyllrb.com/).
 
 Before you begin here, get acquianted with documentation for both the U.S. Web Design Standards and Jeykll.
 - [USWDS Documentation](https://standards.usa.gov/getting-started/)
