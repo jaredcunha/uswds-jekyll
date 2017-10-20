@@ -15,13 +15,16 @@ body {
 
 .hero {
   background: $color-primary-darkest;
-  color: $color-cool-blue-lighter;
   width: 100%;
 }
 
 .hero__content {
   padding-bottom: 10rem;
   padding-top: 10rem;
+
+  > p {
+    color: $color-cool-blue-lighter;
+  }
 }
 
 .hero__primary-heading {
