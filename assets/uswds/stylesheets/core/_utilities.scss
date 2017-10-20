@@ -1,3 +1,41 @@
+// Heading mixins
+@mixin title {
+  font-size: $title-font-size;
+  font-weight: $font-bold;
+}
+
+@mixin h1 {
+  font-size: $h1-font-size;
+  font-weight: $font-bold;
+}
+
+@mixin h2 {
+  font-size: $h2-font-size;
+  font-weight: $font-bold;
+}
+
+@mixin h3 {
+  font-size: $h3-font-size;
+  font-weight: $font-bold;
+}
+
+@mixin h4 {
+  font-size: $h4-font-size;
+  font-weight: $font-bold;
+}
+
+@mixin h5 {
+  font-size: $h5-font-size;
+  font-weight: $font-bold;
+}
+
+@mixin h6 {
+  font-size: $h6-font-size;
+  font-weight: $font-normal;
+  line-height: $base-line-height;
+  text-transform: uppercase;
+}
+
 // Mobile-first media query helper
 @mixin media($bp) {
   @media screen and (min-width: #{$bp}) {
@@ -9,6 +47,15 @@
 @mixin sr-only() {
   position: absolute;
   left: -999em;
+}
+
+// This "negates" the sr-only() helper; useful if
+// we want the default state of something to be
+// for screen readers only, but we want to force
+// it to show for sighted users under more specific
+// conditions.
+@mixin not-sr-only() {
+  position: static;
 }
 
 .usa-sr-only {
@@ -94,8 +141,8 @@
 
 @mixin display-icon($icon, $direction, $size, $margin, $hover) {
   &::#{$direction} {
-    background-image: url(#{$image-path}/#{$icon}.png);
-    background-image: url(#{$image-path}/#{$icon}.svg);
+    background-image: url('#{$image-path}/#{$icon}.png');
+    background-image: url('#{$image-path}/#{$icon}.svg');
     background-size: 100%;
     content: '';
     display: inline-block;
@@ -113,8 +160,8 @@
 
   @if $hover == 'hover' {
     &:hover::#{$direction} {
-      background-image: url(#{$image-path}/#{$icon}-hover.png);
-      background-image: url(#{$image-path}/#{$icon}-hover.svg);
+      background-image: url('#{$image-path}/#{$icon}-hover.png');
+      background-image: url('#{$image-path}/#{$icon}-hover.svg');
     }
   }
 }
@@ -148,12 +195,13 @@
     }
 
     &:focus {
+      outline-offset: 0;
       position: relative;
       z-index: 1;
     }
 
     &.usa-current { /* stylelint-disable-line selector-no-qualifying-type */
-      border-left: 4px solid $color-primary;
+      border-left: 0.4rem solid $color-primary;
       color: $color-primary;
       font-weight: $font-bold;
       padding-left: 1.4rem;
@@ -185,6 +233,10 @@
   .usa-sidenav-sub_list {
     a {
       padding-left: 3.8rem;
+
+      &:focus {
+        outline-offset: 0;
+      }
 
       &:hover {
         padding-left: 3.8rem;
