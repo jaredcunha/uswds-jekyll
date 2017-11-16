@@ -14,13 +14,14 @@ $(document).ready(function() {
   var showFollowup = function(e, required) {
     console.log(required);
     e.removeAttr("aria-hidden, hidden");
+    e.attr("aria-hidden", "false")
     if (required == "true"){
       e.find('input, select').attr('required', 'true');
     }
   }
 
   var hideFollowup = function(e, required) {
-    e.attr({ aria_hidden_attr: "true", hidden: ''});
+    e.attr({ "aria-hidden": "true", hidden: ''});
     if (required == "true"){
       e.find('input, select, textarea').removeAttr('required');
     }
