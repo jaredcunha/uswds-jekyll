@@ -97,16 +97,14 @@ Then in the `<script>` at the bottom you can do:
 ### Follow-up questions
 In some forms, you may want to ask an inline follow-up if a user selects a specific answer. This is enabled on radios, select boxes, and checkboxes using a mix of `data` attributes and `id` attributes.
 
-On the form element that triggers a follow-up, use the `data-followup` attribute with a value that corresponds to the `id` of element you wish toggle on and off. The follow-up can appear in any part of the DOM and can include any type of content.
-
-To make form elements required in the follow-up, place `data-followup-required="true"` on the element that triggers the follow-up to appear.
+On the form element that triggers a follow-up, use the `data-followup` attribute with a value that corresponds to the `id` of element you wish toggle on and off. The follow-up can appear in any part of the DOM and can include any type of content. For accessibility, also use `aria-controls` and `aria-expanded` attributes.
 
 ```
-<input id="other" type="radio" name="historical_figure" value="Other" data-followup="historical-figure-followup" data-followup-required="true" required>
+<input id="other" type="radio" name="historical_figure" value="Other" data-followup="historical-figure-followup" data-controls="historical-figure-followup" aria-expanded="false" required>
 <label for="other">Other</label>
-<div id="historical-figure-followup" hidden aria-hidden="true">
+<div id="historical-figure-followup" hidden>
     <label for="other-hero">Specify</label>
-    <input type="text" id="other-hero" >
+    <input type="text" id="other-hero" disabled>
 </div>
 ```
 
