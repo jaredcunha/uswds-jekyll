@@ -30,9 +30,9 @@ layout: application
           <legend>Name</legend>
           <p>First and last name will come from a JSON file after page refresh.</p>
           <label for="first_name">First Name</label>
-          <input type="text" id="first_name" data-print="first_name" required>
+          <input type="text" id="first_name" name="first_name" data-print="first_name" required>
           <label for="last_name">Last Name</label>
-          <input type="text" id="last_name" data-print="last_name" required>
+          <input type="text" id="last_name" namne="last_name" data-print="last_name" required>
         </fieldset>
         <hr>
         <fieldset>
@@ -129,19 +129,19 @@ layout: application
             <label for="tubman">Harriet Tubman</label>
           </li>
           <li>
-            <input id="other" type="radio" name="historical_figure" value="Other" data-followup="historical_figure-followup" data-followup-required="true" required>
+            <input id="other" type="radio" name="historical_figure" value="Other" data-followup="historical_figure-followup" required aria-controls="historical_figure-followup" aria-expanded="false">
             <label for="other">Other</label>
-            <div id="historical_figure-followup" class="usa-form-followup" hidden aria-hidden="true">
-                <label for="other-hero">Specify</label>
-                <input type="text" id="other-hero" >
+            <div id="historical_figure-followup" class="usa-form-followup" hidden>
+                <label for="other_hero">Specify</label>
+                <input type="text" id="other_hero" name="other_hero" disabled required>
             </div>
           </li>
           <li>
-            <input id="none" type="radio" name="historical_figure" value="None" data-followup="historical_figure-followup2" required>
+            <input id="none" type="radio" name="historical_figure" value="None" data-followup="historical_figure-followup2" aria-expanded="false" aria-controls="historical_figure-followup2" required>
             <label for="none">I don't have a hero</label>
-            <div id="historical_figure-followup2" class="usa-form-followup" hidden aria-hidden="true">
+            <div id="historical_figure-followup2" class="usa-form-followup" hidden>
                 <label for="reason">Why?</label>
-                <input type="text" id="reason" >
+                <input type="text" id="reason" name="reason" disabled>
             </div>
           </li>
         </ul>
@@ -152,18 +152,18 @@ layout: application
         <ul class="usa-unstyled-list">
           <li>
             <input id="burgers" type="checkbox" name="food_order" value="Burgers">
-            <label for="burders">Burgers</label>
+            <label for="burgers">Burgers</label>
           </li>
           <li>
             <input id="pizza" type="checkbox" name="food_order" value="Pizza" required>
             <label for="pizza">Pizza</label>
           </li>
           <li>
-            <input id="muffins" type="checkbox" name="food_order" data-followup="muffin" data-followup-required="true" value="Muffins">
+            <input id="muffins" type="checkbox" name="food_order" data-followup="muffin"  value="Muffins" aria-controls="muffin" aria-expanded="false">
             <label for="muffins">Muffins</label>
-            <div id="muffin" class="usa-form-followup" hidden aria-hidden="true">
-                <label for="muffin-type">Type</label>
-                <input type="text" id="muffin-type" >
+            <div id="muffin" class="usa-form-followup" hidden>
+                <label for="muffin_type">Type</label>
+                <input type="text" id="muffin_type" name="muffin_type" disabled required>
             </div>
           </li>
         </ul>
@@ -176,22 +176,22 @@ layout: application
         <select name="additional_field" id="additional_field">
           <option value=""></option>
           <option value="no">No</option>
-          <option value="yes" data-followup="additional_field_q">Yes</option>
+          <option value="yes" data-followup="additional_field_q" aria-controls="additional_field_q" aria-expanded="false">Yes</option>
         </select>
-        <div id="additional_field_q" class="usa-form-followup" hidden aria-hidden="true">
+        <div id="additional_field_q" class="usa-form-followup" hidden>
             <label for="g">What is it?</label>
-            <input type="text" id="g" >
+            <input type="text" id="g" name="g" disabled>
         </div>
 
         <label for="additional_field2">Additional Field?</label>
         <select name="additional_field2" id="additional_field2">
           <option value=""></option>
           <option value="no">No</option>
-          <option value="yes" data-followup="additional_field_q2">Yes</option>
+          <option value="yes" data-followup="additional_field_q2" data-controls="additional_field_q2" data-expanded="false">Yes</option>
         </select>
-        <div id="additional_field_q2" class="usa-form-followup" hidden aria-hidden="true">
+        <div id="additional_field_q2" class="usa-form-followup" hidden >
             <label for="gh">What is it?</label>
-            <input type="text" id="gh" >
+            <input type="text" id="gh" name="gh" disabled>
         </div>
       </fieldset>
       <button type="submit">Submit</button>

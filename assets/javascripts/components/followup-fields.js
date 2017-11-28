@@ -5,73 +5,64 @@
 */
 
 $(document).ready(function() {
-  var hidden_class = "usa-extend--hidden",
-      aria_hidden_attr = "aria-hidden",
+  var aria_hidden_attr = "aria-hidden",
       $radio = $("input:radio"),
       $checkbox = $('input:checkbox[data-followup]'),
       $selectbox = $('select');
 
-  var showFollowup = function(e, required) {
-    console.log(required);
-    e.removeAttr("aria-hidden, hidden");
-    e.attr("aria-hidden", "false")
-    if (required == "true"){
-      e.find('input, select').attr('required', 'true');
-    }
+  var showFollowup = function(control, target) {
+    target.removeAttr("hidden");
+    control.attr("aria-expanded", "true");
+    target.find('input, select, textarea').removeAttr("disabled");
   }
 
-  var hideFollowup = function(e, required) {
-    e.attr({ "aria-hidden": "true", hidden: ''});
-    if (required == "true"){
-      e.find('input, select, textarea').removeAttr('required');
-    }
+  var hideFollowup = function(control, target) {
+    target.attr("hidden", "");
+    control.attr("aria-expanded", "false");
+    target.find('input, select, textarea').attr("disabled", "true");
   };
 
   // Handle Radio Buttons
   $radio.change(function () {
     var name = $(this).attr("name");
-    var $el = $('input:radio[name="'+ name +'"]');
+    var $control = $('input:radio[name="'+ name +'"]');
 
-    $el.each(function(){
-      var target = $(this).attr('data-followup'),
-          required = $(this).attr('data-followup-required');
+    $control.each(function(){
+      var target = $(this).attr('data-followup');
       if ($(this).is(":checked")) {
-        showFollowup($('#' + target), required);
+        showFollowup($control, $('#' + target));
       }
       else {
-        hideFollowup($('#' + target), required);
+        hideFollowup($control, $('#' + target));
       }
     });
   });
 
   // Handle Checkboxes
   $checkbox.change(function(){
-    var target = $(this).attr('data-followup'),
-        required = $(this).attr('data-followup-required');
+    var $control = $(this),
+        target = $(this).attr('data-followup');
     if ($(this).is(":checked")) {
-      showFollowup($('#' + target), required);
+      showFollowup($control, $('#' + target));
     }
     else {
-      hideFollowup($('#' + target), required);
+      hideFollowup($control, $('#' + target));
     }
   });
 
-  // Handle Selct Boxes
+  // Handle Select Boxes
   var previous;
   $selectbox.on('click focus keydown', function(){
-    previous = $(this).find(':selected').attr('data-followup'),
-    previous_required = $(this).find(':selected').attr('data-followup-required');
+    previous = $(this).find(':selected').attr('data-followup');
   }).change(function(){
-    console.log(previous)
-    var selected_val = $(this).find('option[data-followup]:selected').val();
-    var target = $(this).find(':selected').attr('data-followup'),
-        required = $(this).find(':selected').attr('data-followup-required');
-
+    var $control = $(this).find('option[data-followup]:selected'),
+        selected_val = $(this).find('option[data-followup]:selected').val(),
+        target = $(this).find(':selected').attr('data-followup');
     if ($(this).find(':selected').val() == selected_val) {
-      showFollowup($('#' + target), required);
+      showFollowup($control, $('#' + target));
     }
     if (selected_val != previous) {
-      hideFollowup($('#' + previous), previous_required);
+      hideFollowup($control, $('#' + previous));
     }
   });
 
